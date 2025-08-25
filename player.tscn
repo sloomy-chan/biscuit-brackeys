@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyysr72yn5jf6"]
+
+[ext_resource type="Texture2D" uid="uid://b2dfauqqv1c7m" path="res://player.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://cb2kx47c3p66q" path="res://player.gd" id="2_i3pqv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_onrkg"]
+friction = 0.1
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
+radius = 2.0
+height = 4.0
+
+[node name="player" type="Node2D"]
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(-3, 0)
+mass = 0.6
+physics_material_override = SubResource("PhysicsMaterial_onrkg")
+gravity_scale = 0.543
+inertia = 8.77
+lock_rotation = true
+linear_damp_mode = 1
+script = ExtResource("2_i3pqv")
+velocidade_ground = 98.0
+velocidade_ar = 9.0
+forca_pulo = 13
+timer_pulo_limite = 0.24
+
+[node name="Camera2D" type="Camera2D" parent="RigidBody2D2"]
+position = Vector2(3, 0)
+offset = Vector2(11, 0)
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
+drag_vertical_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+position = Vector2(3, 0)
+shape = SubResource("CapsuleShape2D_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2/CollisionShape2D"]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-3.8147e-06, 0)
+scale = Vector2(0.117188, 0.117188)
+texture = ExtResource("1_4flbx")
