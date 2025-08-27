@@ -1,0 +1,62 @@
+[gd_scene load_steps=13 format=4 uid="uid://dpqgi0j5yx07g"]
+
+[ext_resource type="Texture2D" uid="uid://blrooasx7ts43" path="res://sprites/chao_debug.png" id="1_k3dhe"]
+[ext_resource type="Texture2D" uid="uid://1we7hcyrrrdu" path="res://sprites/chao_debug_wedge.png" id="2_s1xg0"]
+[ext_resource type="Texture2D" uid="uid://dwimtdn52or27" path="res://sprites/debug_wedge_contrario.png" id="3_xnlap"]
+[ext_resource type="PackedScene" uid="uid://bdr7b5c4p2vf0" path="res://cenas/plataformas/up-down.tscn" id="5_nq8wi"]
+[ext_resource type="PackedScene" uid="uid://dbxqfof1n5n6t" path="res://cenas/plataformas/down-up.tscn" id="6_8hx6x"]
+[ext_resource type="PackedScene" uid="uid://cyysr72yn5jf6" path="res://cenas/player.tscn" id="6_nq8wi"]
+[ext_resource type="PackedScene" uid="uid://be4mnx8xu5vl3" path="res://cenas/plataformas/plataforma_farinha.tscn" id="7_8hx6x"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nq8wi"]
+friction = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgyrp"]
+texture = ExtResource("1_k3dhe")
+texture_region_size = Vector2i(30, 30)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, 15, 15, 15, 15, -15, -15, -15)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nq8wi"]
+texture = ExtResource("2_s1xg0")
+texture_region_size = Vector2i(30, 30)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, 15, 15, -15, 15, 15)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8hx6x"]
+texture = ExtResource("3_xnlap")
+texture_region_size = Vector2i(30, 30)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -15, 15, 15, -15, 15)
+
+[sub_resource type="TileSet" id="TileSet_kixru"]
+tile_size = Vector2i(30, 30)
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_nq8wi")
+sources/0 = SubResource("TileSetAtlasSource_xgyrp")
+sources/1 = SubResource("TileSetAtlasSource_nq8wi")
+sources/2 = SubResource("TileSetAtlasSource_8hx6x")
+
+[node name="level 1" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAgAAAAAAAAAIAAEAAgAAAAAAAAAJAAIAAgAAAAAAAAAKAAMAAgAAAAAAAAALAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAANAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAAPAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAZAAQAAAAAAAAAAAAaAAQAAAAAAAAAAAAbAAQAAAAAAAAAAAAcAAQAAAAAAAAAAAAdAAQAAAAAAAAAAAAdAAUAAAAAAAAAAAAdAAYAAAAAAAAAAAAdAAcAAAAAAAAAAAAdAAgAAAAAAAAAAAAdAAkAAAAAAAAAAAAdAAoAAAAAAAAAAAAdAAsAAAAAAAAAAAAgAAEAAAAAAAAAAAAgAAIAAAAAAAAAAAAgAAMAAAAAAAAAAAAgAAAAAAAAAAAAAAAfAAAAAAAAAAAAAAAeAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAgAAUAAAAAAAAAAAAgAAYAAAAAAAAAAAAgAAcAAAAAAAAAAAAgAAgAAAAAAAAAAAAgAAkAAAAAAAAAAAAgAAoAAAAAAAAAAAAgAAsAAAAAAAAAAAAgAAwAAAAAAAAAAAAgAA0AAAAAAAAAAAAgAA4AAAAAAAAAAAAgAA8AAAAAAAAAAAAfAA8AAAAAAAAAAAAeAA8AAAAAAAAAAAAdAA8AAAAAAAAAAAAcAA8AAAAAAAAAAAAbAA8AAAAAAAAAAAAaAA8AAAAAAAAAAAASAA8AAAAAAAAAAAARAA8AAAAAAAAAAAAOAA8AAAAAAAAAAAALAA8AAAAAAAAAAAAKAA8AAAAAAAAAAAAIAA4AAAAAAAAAAAAJAA4AAgAAAAAAAAAHAA4AAAAAAAAAAAAGAA4AAAAAAAAAAAAEAA8AAAAAAAAAAAADAA8AAAAAAAAAAAABABAAAAAAAAAAAAAAABAAAAAAAAAAAAD//xAAAAAAAAAAAAD+/xAAAAAAAAAAAAD+/w8AAAAAAAAAAAD+/w4AAAAAAAAAAAD+/w0AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_kixru")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("6_nq8wi")]
+position = Vector2(36, -46)
+
+[node name="up-down" parent="." instance=ExtResource("5_nq8wi")]
+position = Vector2(722, 366)
+
+[node name="down-up" parent="." instance=ExtResource("6_8hx6x")]
+position = Vector2(629, 451)
+
+[node name="plataforma-farinha" parent="." instance=ExtResource("7_8hx6x")]
+position = Vector2(516, 112)
+
+[node name="plataforma-farinha2" parent="." instance=ExtResource("7_8hx6x")]
+position = Vector2(585, 111)
+
+[node name="plataforma-farinha3" parent="." instance=ExtResource("7_8hx6x")]
+position = Vector2(660, 111)

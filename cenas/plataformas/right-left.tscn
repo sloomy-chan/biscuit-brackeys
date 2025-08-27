@@ -1,0 +1,118 @@
+[gd_scene load_steps=10 format=3 uid="uid://b2uep6k201y4d"]
+
+[ext_resource type="Script" uid="uid://bissnwih1xh17" path="res://scripts/plataforma.gd" id="1_8l7xx"]
+[ext_resource type="Texture2D" uid="uid://blrooasx7ts43" path="res://sprites/chao_debug.png" id="2_8l7xx"]
+
+[sub_resource type="Animation" id="Animation_1v4vm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m7h5w"]
+resource_name = "down-up"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 94.44), Vector2(0, -26.875), Vector2(0, 94.44)]
+}
+
+[sub_resource type="Animation" id="Animation_mdt4f"]
+resource_name = "left-right"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(94.44, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_aynu2"]
+resource_name = "right-left"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(94.44, 0), Vector2(0, 0), Vector2(94.44, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bon5w"]
+resource_name = "up-down"
+length = 2.013
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2.013),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -26.875), Vector2(0, 94.44), Vector2(0, -26.875)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hm2qp"]
+_data = {
+&"RESET": SubResource("Animation_1v4vm"),
+&"down-up": SubResource("Animation_m7h5w"),
+&"left-right": SubResource("Animation_mdt4f"),
+&"right-left": SubResource("Animation_aynu2"),
+&"up-down": SubResource("Animation_bon5w")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1v4vm"]
+size = Vector2(63, 16.5)
+
+[node name="right-left" type="Node2D"]
+script = ExtResource("1_8l7xx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatableBody2D")
+libraries = {
+&"": SubResource("AnimationLibrary_hm2qp")
+}
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+constant_linear_velocity = Vector2(0, 94.44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_1v4vm")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D/CollisionShape2D"]
+position = Vector2(0.5, -4.76837e-07)
+scale = Vector2(2.1, 0.533333)
+texture = ExtResource("2_8l7xx")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm27lehb5ei3v"]
+
+[ext_resource type="Texture2D" uid="uid://blrooasx7ts43" path="res://sprites/chao_debug.png" id="1_lvro7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvro7"]
+size = Vector2(50, 12)
+
+[node name="plataforma-some" type="Node2D" groups=["plataforma-some"]]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(0, 0.999998)
+scale = Vector2(1.66667, 0.4)
+texture = ExtResource("1_lvro7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_lvro7")

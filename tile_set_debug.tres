@@ -1,0 +1,26 @@
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://v7rr4wjv58sk"]
+
+[ext_resource type="Texture2D" uid="uid://blrooasx7ts43" path="res://sprites/chao_debug.png" id="1_k1dp3"]
+[ext_resource type="Texture2D" uid="uid://1we7hcyrrrdu" path="res://sprites/chao_debug_wedge.png" id="2_qxdps"]
+[ext_resource type="Texture2D" uid="uid://dwimtdn52or27" path="res://sprites/debug_wedge_contrario.png" id="3_xcd63"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pvco7"]
+texture = ExtResource("1_k1dp3")
+texture_region_size = Vector2i(30, 30)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5yog3"]
+texture = ExtResource("2_qxdps")
+texture_region_size = Vector2i(30, 30)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bqbxk"]
+texture = ExtResource("3_xcd63")
+texture_region_size = Vector2i(30, 30)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(30, 30)
+sources/0 = SubResource("TileSetAtlasSource_pvco7")
+sources/1 = SubResource("TileSetAtlasSource_5yog3")
+sources/2 = SubResource("TileSetAtlasSource_bqbxk")

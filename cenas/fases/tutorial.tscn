@@ -1,0 +1,64 @@
+[gd_scene load_steps=13 format=4 uid="uid://dixyojc4r5beq"]
+
+[ext_resource type="Texture2D" uid="uid://blrooasx7ts43" path="res://sprites/chao_debug.png" id="1_g6ovn"]
+[ext_resource type="Texture2D" uid="uid://1we7hcyrrrdu" path="res://sprites/chao_debug_wedge.png" id="2_8uypi"]
+[ext_resource type="Texture2D" uid="uid://dwimtdn52or27" path="res://sprites/debug_wedge_contrario.png" id="2_88h5d"]
+[ext_resource type="PackedScene" uid="uid://cyysr72yn5jf6" path="res://cenas/player.tscn" id="3_88h5d"]
+[ext_resource type="PackedScene" uid="uid://dbxqfof1n5n6t" path="res://cenas/plataformas/down-up.tscn" id="4_x0dci"]
+[ext_resource type="PackedScene" uid="uid://bdr7b5c4p2vf0" path="res://cenas/plataformas/up-down.tscn" id="5_8uypi"]
+[ext_resource type="PackedScene" uid="uid://n4csn4lfnbqg" path="res://cenas/ghost.tscn" id="7_x0dci"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6fnve"]
+friction = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vt2yd"]
+texture = ExtResource("1_g6ovn")
+texture_region_size = Vector2i(30, 30)
+use_texture_padding = false
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -15, 15, -15, 15, 15, -15, 15)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x0dci"]
+texture = ExtResource("2_88h5d")
+texture_region_size = Vector2i(30, 30)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(15, 15, -15, 15, -15, -15)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nn0l7"]
+texture = ExtResource("2_8uypi")
+texture_region_size = Vector2i(30, 30)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, 15, 15, -15, 15, 15, -15, 15)
+
+[sub_resource type="TileSet" id="TileSet_xdpsd"]
+tile_size = Vector2i(30, 30)
+uv_clipping = true
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_6fnve")
+sources/0 = SubResource("TileSetAtlasSource_vt2yd")
+sources/2 = SubResource("TileSetAtlasSource_nn0l7")
+sources/1 = SubResource("TileSetAtlasSource_x0dci")
+
+[node name="tutorial" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(7, 1)
+tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAEAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAANAAEAAAAAAAAAAAAMAAIAAAAAAAAAAAANAAIAAAAAAAAAAAAPAAIAAAAAAAAAAAAOAAIAAAAAAAAAAAAQAAIAAAAAAAAAAAASAAEAAAAAAAAAAAAUAAEAAAAAAAAAAAAWAAEAAAAAAAAAAAAYAAEAAAAAAAAAAAAaAAEAAAAAAAAAAAD//wEAAAAAAAAAAAAcAAEAAAAAAAAAAAAdAAEAAAAAAAAAAAAeAAEAAAAAAAAAAAAfAAEAAAAAAAAAAAAgAAEAAAAAAAAAAAAmAPz/AAAAAAAAAAAnAPz/AAAAAAAAAAAoAPz/AAAAAAAAAAApAPz/AAAAAAAAAAAqAPz/AAAAAAAAAAArAP3/AAAAAAAAAAAsAP7/AAAAAAAAAAAtAP//AAAAAAAAAAAuAAAAAAAAAAAAAAAvAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAxAAAAAAAAAAAAAAAyAAAAAAAAAAAAAAAzAAAAAAAAAAAAAAAGAAAAAgAAAAAAAAARAAEAAgAAAAAAAAALAAAAAQAAAAAAAAAOAAEAAQAAAAAAAAArAPz/AQAAAAAAAAAsAP3/AQAAAAAAAAAtAP7/AQAAAAAAAAAuAP//AQAAAAAAAAA0AAAAAQAAAAAAAAA1AAEAAQAAAAAAAAA2AAIAAQAAAAAAAAA3AAMAAAAAAAAAAAA4AAMAAAAAAAAAAAA5AAMAAAAAAAAAAAA6AAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_xdpsd")
+occlusion_enabled = false
+rendering_quadrant_size = 11
+navigation_enabled = false
+
+[node name="player" parent="." instance=ExtResource("3_88h5d")]
+position = Vector2(16, -11)
+
+[node name="down-up" parent="." instance=ExtResource("4_x0dci")]
+position = Vector2(1038, -42)
+
+[node name="up-down" parent="." instance=ExtResource("5_8uypi")]
+position = Vector2(1107, -114)
+
+[node name="ghost" parent="." instance=ExtResource("7_x0dci")]
+position = Vector2(-110, -82)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2dfauqqv1c7m"
-path="res://.godot/imported/player.png-2dd0af52de4b213777cd8c9df94c0978.ctex"
+uid="uid://cgwj8wde6q6wl"
+path="res://.godot/imported/ghost_hands.png-08d3af2d0e3bce706c82f94dc90de930.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player.png"
-dest_files=["res://.godot/imported/player.png-2dd0af52de4b213777cd8c9df94c0978.ctex"]
+source_file="res://sprites/ghost/ghost_hands.png"
+dest_files=["res://.godot/imported/ghost_hands.png-08d3af2d0e3bce706c82f94dc90de930.ctex"]
 
 [params]
 
