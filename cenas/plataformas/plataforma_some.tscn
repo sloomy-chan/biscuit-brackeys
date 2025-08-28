@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cm27lehb5ei3v"]
 
-[ext_resource type="Texture2D" uid="uid://blrooasx7ts43" path="res://sprites/chao_debug.png" id="1_lvro7"]
+[ext_resource type="Texture2D" uid="uid://blrooasx7ts43" path="res://sprites/sprites fases/DEBUG/chao_debug.png" id="1_lvro7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvro7"]
 size = Vector2(50, 12)

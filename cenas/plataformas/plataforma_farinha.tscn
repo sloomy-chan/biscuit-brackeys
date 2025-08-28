@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://be4mnx8xu5vl3"]
 
-[ext_resource type="Script" uid="uid://1422ouqlqyhm" path="res://scripts/plataforma_farinha.gd" id="1_a34al"]
-[ext_resource type="Texture2D" uid="uid://blrooasx7ts43" path="res://sprites/chao_debug.png" id="1_dsacg"]
+[ext_resource type="Script" uid="uid://1422ouqlqyhm" path="res://scripts/assets das fases/plataforma_farinha.gd" id="1_a34al"]
+[ext_resource type="Texture2D" uid="uid://blrooasx7ts43" path="res://sprites/sprites fases/DEBUG/chao_debug.png" id="1_dsacg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dsacg"]
 size = Vector2(50, 16)

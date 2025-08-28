@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=4 uid="uid://b2rgkajvte0of"]
+
+[ext_resource type="PackedScene" uid="uid://cyysr72yn5jf6" path="res://cenas/player.tscn" id="1_rbl60"]
+[ext_resource type="TileSet" uid="uid://v7rr4wjv58sk" path="res://sprites/sprites fases/DEBUG/tile_set_debug.tres" id="2_h7xm0"]
+[ext_resource type="PackedScene" uid="uid://n4csn4lfnbqg" path="res://cenas/assets das fases/ghost.tscn" id="3_nmpa3"]
+[ext_resource type="PackedScene" uid="uid://b4ev35f81ql7i" path="res://cenas/assets das fases/botão.tscn" id="4_gwcxe"]
+[ext_resource type="PackedScene" uid="uid://cm27lehb5ei3v" path="res://cenas/plataformas/plataforma_some.tscn" id="5_hoovy"]
+[ext_resource type="PackedScene" uid="uid://be4mnx8xu5vl3" path="res://cenas/plataformas/plataforma_farinha.tscn" id="6_kra7w"]
+[ext_resource type="PackedScene" uid="uid://israjmx1rxfx" path="res://cenas/assets das fases/killbox.tscn" id="7_dr60p"]
+[ext_resource type="PackedScene" uid="uid://crp2l7ecaqxuq" path="res://cenas/assets das fases/level_end.tscn" id="8_h7xm0"]
+[ext_resource type="PackedScene" uid="uid://dawl5f0e2vwbx" path="res://cenas/assets das fases/fases/level_4.tscn" id="9_nmpa3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ds5r"]
+size = Vector2(693, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_liaj6"]
+size = Vector2(533.501, 106.899)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b60u5"]
+size = Vector2(564, 74)
+
+[node name="level 3" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_rbl60")]
+position = Vector2(31, 15)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAARAAEAAAAAAAAAAAASAAEAAAAAAAAAAAAWAAEAAAAAAAAAAAAXAAEAAAAAAAAAAAAYAAEAAgAAAAAAAAAZAAIAAgAAAAAAAAAaAAMAAgAAAAAAAAAbAAQAAgAAAAAAAAAcAAUAAgAAAAAAAAAdAAYAAgAAAAAAAAAeAAcAAAAAAAAAAAAfAAcAAAAAAAAAAAAgAAcAAAAAAAAAAAAjAAYAAAAAAAAAAAAjAAcAAAAAAAAAAAAjAAgAAAAAAAAAAAAjAAkAAAAAAAAAAAAjAAoAAAAAAAAAAAAjAAsAAAAAAAAAAAAiAAsAAAAAAAAAAAAhAAsAAAAAAAAAAAAgAAsAAAAAAAAAAAAdAAwAAAAAAAAAAAAcAAwAAAAAAAAAAAAaAA4AAAAAAAAAAAAZAA4AAAAAAAAAAAAXABEAAAAAAAAAAAAWABEAAAAAAAAAAAATABQAAAAAAAAAAAASABQAAAAAAAAAAAARABQAAAAAAAAAAAAQABQAAAAAAAAAAAAPABQAAAAAAAAAAAAOABQAAAAAAAAAAAANABQAAAAAAAAAAAD4/xQAAAAAAAAAAAD4/xUAAAAAAAAAAAD4/xYAAAAAAAAAAAD4/xcAAAAAAAAAAAD4/xgAAAAAAAAAAAD4/xkAAAAAAAAAAAD4/xoAAAAAAAAAAAD4/xsAAAAAAAAAAAD4/xwAAAAAAAAAAAD4/x0AAAAAAAAAAAD4/x4AAAAAAAAAAAD7/xcAAAAAAAAAAAD7/xgAAAAAAAAAAAD7/xkAAAAAAAAAAAD7/xoAAAAAAAAAAAD7/xsAAAAAAAAAAAD7/xwAAAAAAAAAAAD7/x0AAAAAAAAAAAD7/x4AAAAAAAAAAAD4/x8AAAAAAAAAAAD4/yAAAAAAAAAAAAD4/yEAAAAAAAAAAAD4/yIAAAAAAAAAAAD5/yIAAAAAAAAAAAD6/yIAAAAAAAAAAAD7/yIAAAAAAAAAAAD8/yIAAAAAAAAAAAD+/yQAAAAAAAAAAAD//yQAAAAAAAAAAAAAACQAAAAAAAAAAAADACUAAAAAAAAAAAAEACUAAAAAAAAAAAAFACUAAAAAAAAAAAAIACYAAAAAAAAAAAAJACYAAAAAAAAAAAAKACYAAAAAAAAAAAAgACYAAAAAAAAAAAAhACYAAAAAAAAAAAAiACYAAAAAAAAAAAAjACYAAAAAAAAAAAAkACYAAAAAAAAAAAAlACYAAAAAAAAAAAAmACYAAAAAAAAAAAAnACYAAAAAAAAAAAAoACYAAAAAAAAAAAApACYAAAAAAAAAAAAqACYAAAAAAAAAAAArACYAAAAAAAAAAAArACUAAAAAAAAAAAArACQAAAAAAAAAAAArACMAAAAAAAAAAAA=")
+tile_set = ExtResource("2_h7xm0")
+
+[node name="ghost" parent="." instance=ExtResource("3_nmpa3")]
+position = Vector2(-69, -13)
+
+[node name="botão" parent="." node_paths=PackedStringArray("plataformas") instance=ExtResource("4_gwcxe")]
+position = Vector2(410, 588)
+plataformas = [NodePath("plataforma-some"), NodePath("plataforma-some2"), NodePath("plataforma-some3"), NodePath("plataforma-some4")]
+
+[node name="plataforma-some" parent="botão" instance=ExtResource("5_hoovy")]
+position = Vector2(-113, 34)
+
+[node name="plataforma-some2" parent="botão" instance=ExtResource("5_hoovy")]
+position = Vector2(-244, 38)
+
+[node name="plataforma-some3" parent="botão" instance=ExtResource("5_hoovy")]
+position = Vector2(-362, 41)
+
+[node name="plataforma-some4" parent="botão" instance=ExtResource("5_hoovy")]
+position = Vector2(-481, 41)
+
+[node name="plataforma-farinha" parent="." instance=ExtResource("6_kra7w")]
+position = Vector2(412, 1159)
+
+[node name="plataforma-farinha2" parent="." instance=ExtResource("6_kra7w")]
+position = Vector2(525, 1162)
+
+[node name="plataforma-farinha3" parent="." instance=ExtResource("6_kra7w")]
+position = Vector2(643, 1162)
+
+[node name="plataforma-farinha4" parent="." instance=ExtResource("6_kra7w")]
+position = Vector2(764, 1159)
+
+[node name="plataforma-farinha5" parent="." instance=ExtResource("6_kra7w")]
+position = Vector2(877, 1162)
+
+[node name="Area2D" parent="." instance=ExtResource("7_dr60p")]
+position = Vector2(-288, 195)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(641.5, -104)
+shape = SubResource("RectangleShape2D_7ds5r")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1109, 360)
+rotation = -0.609936
+shape = SubResource("RectangleShape2D_liaj6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(476, 518)
+shape = SubResource("RectangleShape2D_b60u5")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(138, 895, 275, 975, 540, 1045, 790, 1038, 1070, 1043, 1291, 1020, 1312, 1136, 60, 1040)
+
+[node name="level end" parent="." instance=ExtResource("8_h7xm0")]
+position = Vector2(1251, 1123)
+proxima_cena = ExtResource("9_nmpa3")

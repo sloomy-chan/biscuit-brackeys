@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=4 uid="uid://dawl5f0e2vwbx"]
+
+[ext_resource type="TileSet" uid="uid://v7rr4wjv58sk" path="res://sprites/sprites fases/DEBUG/tile_set_debug.tres" id="1_pp0ri"]
+[ext_resource type="PackedScene" uid="uid://dr5xc2nm31l1n" path="res://cenas/assets das fases/skate.tscn" id="2_bfpl4"]
+[ext_resource type="PackedScene" uid="uid://cyysr72yn5jf6" path="res://cenas/player.tscn" id="3_hbqjf"]
+[ext_resource type="PackedScene" uid="uid://israjmx1rxfx" path="res://cenas/assets das fases/killbox.tscn" id="4_jm3ma"]
+[ext_resource type="PackedScene" uid="uid://b4ev35f81ql7i" path="res://cenas/assets das fases/botão.tscn" id="5_bul26"]
+[ext_resource type="PackedScene" uid="uid://cm27lehb5ei3v" path="res://cenas/plataformas/plataforma_some.tscn" id="6_qgkg8"]
+[ext_resource type="PackedScene" uid="uid://crp2l7ecaqxuq" path="res://cenas/assets das fases/level_end.tscn" id="7_bfpl4"]
+
+[node name="level 4" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("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")
+tile_set = ExtResource("1_pp0ri")
+
+[node name="skate" parent="." instance=ExtResource("2_bfpl4")]
+position = Vector2(42, -11)
+
+[node name="player" parent="." instance=ExtResource("3_hbqjf")]
+position = Vector2(-44, -13)
+
+[node name="Area2D2" parent="." instance=ExtResource("4_jm3ma")]
+position = Vector2(317, 357)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
+polygon = PackedVector2Array(-453, -260, -105, -280, -62, -240, 366, -226, 408, -172, 1418, -169, 1572, -17, 1775, -80, 1855, 0, 2214, 14, 2865, -3, 3293, -209, 4394, -163, 5127, -137, 4377, 436, 979, 542, -396, 311, -476, -89)
+
+[node name="botão" parent="." node_paths=PackedStringArray("plataformas") instance=ExtResource("5_bul26")]
+position = Vector2(3817, -73)
+plataformas = [NodePath("plataforma-some2/plataforma-some"), NodePath("plataforma-some2"), NodePath("plataforma-some3"), NodePath("plataforma-some3/plataforma-some4"), NodePath("plataforma-some5"), NodePath("plataforma-some5/plataforma-some6")]
+
+[node name="plataforma-some2" parent="botão" instance=ExtResource("6_qgkg8")]
+position = Vector2(347, 173)
+
+[node name="plataforma-some" parent="botão/plataforma-some2" instance=ExtResource("6_qgkg8")]
+position = Vector2(-261, -14)
+
+[node name="plataforma-some3" parent="botão" instance=ExtResource("6_qgkg8")]
+position = Vector2(395, 173)
+
+[node name="plataforma-some4" parent="botão/plataforma-some3" instance=ExtResource("6_qgkg8")]
+position = Vector2(-359, -14)
+
+[node name="plataforma-some5" parent="botão" instance=ExtResource("6_qgkg8")]
+position = Vector2(652, 182)
+
+[node name="plataforma-some6" parent="botão/plataforma-some5" instance=ExtResource("6_qgkg8")]
+position = Vector2(47, 0)
+
+[node name="level end" parent="." instance=ExtResource("7_bfpl4")]
+position = Vector2(4977, 46)

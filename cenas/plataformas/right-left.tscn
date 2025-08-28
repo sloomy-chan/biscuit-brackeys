@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://b2uep6k201y4d"]
 
-[ext_resource type="Script" uid="uid://bissnwih1xh17" path="res://scripts/plataforma.gd" id="1_8l7xx"]
-[ext_resource type="Texture2D" uid="uid://blrooasx7ts43" path="res://sprites/chao_debug.png" id="2_8l7xx"]
+[ext_resource type="Script" uid="uid://bissnwih1xh17" path="res://scripts/assets das fases/plataforma.gd" id="1_8l7xx"]
+[ext_resource type="Texture2D" uid="uid://blrooasx7ts43" path="res://sprites/sprites fases/DEBUG/chao_debug.png" id="2_8l7xx"]
 
 [sub_resource type="Animation" id="Animation_1v4vm"]
 length = 0.001
@@ -54,6 +54,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_aynu2"]
 resource_name = "right-left"
 length = 2.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -104,6 +105,7 @@ root_node = NodePath("../AnimatableBody2D")
 libraries = {
 &"": SubResource("AnimationLibrary_hm2qp")
 }
+autoplay = "right-left"
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 constant_linear_velocity = Vector2(0, 94.44)

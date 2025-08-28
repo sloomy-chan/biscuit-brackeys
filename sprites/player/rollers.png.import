@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blrooasx7ts43"
-path="res://.godot/imported/chao_debug.png-eecda308fdbf148b044d966ef04d7991.ctex"
+uid="uid://o6kqapau1e7m"
+path="res://.godot/imported/rollers.png-9300ef4060e119a8ca15f2acd176184d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/chao_debug.png"
-dest_files=["res://.godot/imported/chao_debug.png-eecda308fdbf148b044d966ef04d7991.ctex"]
+source_file="res://sprites/player/rollers.png"
+dest_files=["res://.godot/imported/rollers.png-9300ef4060e119a8ca15f2acd176184d.ctex"]
 
 [params]
 

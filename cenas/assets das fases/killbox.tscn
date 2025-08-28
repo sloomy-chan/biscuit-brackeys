@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://israjmx1rxfx"]
+
+[ext_resource type="Script" uid="uid://cbarod5mcuh3r" path="res://cenas/assets das fases/killbox.gd" id="1_n2ocx"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_n2ocx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

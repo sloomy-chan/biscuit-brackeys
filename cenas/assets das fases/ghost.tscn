@@ -1,9 +1,36 @@
 [gd_scene load_steps=10 format=3 uid="uid://n4csn4lfnbqg"]
 
-[ext_resource type="Script" uid="uid://c4hvy2aslwsgf" path="res://scripts/ghost.gd" id="1_0liil"]
+[ext_resource type="Script" uid="uid://c4hvy2aslwsgf" path="res://scripts/assets das fases/ghost.gd" id="1_0liil"]
 [ext_resource type="Texture2D" uid="uid://wxk4u10rfei8" path="res://sprites/ghost/ghost2.png" id="2_sippa"]
 [ext_resource type="Texture2D" uid="uid://cgwj8wde6q6wl" path="res://sprites/ghost/ghost_hands.png" id="2_vpnqr"]
 [ext_resource type="Texture2D" uid="uid://r0y3l4s4s43x" path="res://sprites/ghost/ghost.png" id="3_vpnqr"]
+
+[sub_resource type="Animation" id="Animation_72yiy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/CollisionShape2D/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, -4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D/Sprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(57.0001, -22)]
+}
 
 [sub_resource type="Animation" id="Animation_2lice"]
 resource_name = "hands"
@@ -32,33 +59,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(2.46229, 2.07053, 2),
 "update": 0,
 "values": [Vector2(63.0001, -16), Vector2(63.0001, 34), Vector2(63.0001, 39)]
-}
-
-[sub_resource type="Animation" id="Animation_72yiy"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Area2D/CollisionShape2D/Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2, -4)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D/CollisionShape2D/Sprite2D2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(57.0001, -22)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l6anm"]
@@ -106,13 +106,11 @@ shape = SubResource("CircleShape2D_2jnlm")
 z_index = 1
 texture_filter = 1
 position = Vector2(-2, -4)
-scale = Vector2(1, 1)
 texture = ExtResource("2_vpnqr")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Area2D/CollisionShape2D"]
 texture_filter = 1
 position = Vector2(57.0001, -22)
-scale = Vector2(1, 1)
 texture = ExtResource("2_vpnqr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -1,7 +1,7 @@
 extends Node2D
 
 var player
-var velocidade = 0.3
+var velocidade = 0.5
 func _ready() -> void:
 	player = get_tree().get_nodes_in_group("player")
 

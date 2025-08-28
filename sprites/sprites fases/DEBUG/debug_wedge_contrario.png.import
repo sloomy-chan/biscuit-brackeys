@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cylwgvvw7ypp4"
-path="res://.godot/imported/botão.png-4a70d3779290d170b46dd71579878734.ctex"
+uid="uid://dwimtdn52or27"
+path="res://.godot/imported/debug_wedge_contrario.png-eadee5f308ac4009b330eb6fa9e77070.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/botão.png"
-dest_files=["res://.godot/imported/botão.png-4a70d3779290d170b46dd71579878734.ctex"]
+source_file="res://sprites/sprites fases/DEBUG/debug_wedge_contrario.png"
+dest_files=["res://.godot/imported/debug_wedge_contrario.png-eadee5f308ac4009b330eb6fa9e77070.ctex"]
 
 [params]
 

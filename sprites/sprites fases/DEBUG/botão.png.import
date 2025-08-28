@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4mjw686pge3s"
-path="res://.godot/imported/ghost_PNG40.png-6d6abf2b8edb08bce6837709d9cf5b34.ctex"
+uid="uid://cylwgvvw7ypp4"
+path="res://.godot/imported/botão.png-816fe9074b97a63068740569aef6bb97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ghost_PNG40.png"
-dest_files=["res://.godot/imported/ghost_PNG40.png-6d6abf2b8edb08bce6837709d9cf5b34.ctex"]
+source_file="res://sprites/sprites fases/DEBUG/botão.png"
+dest_files=["res://.godot/imported/botão.png-816fe9074b97a63068740569aef6bb97.ctex"]
 
 [params]
 

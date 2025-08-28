@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bdr7b5c4p2vf0"]
 
-[ext_resource type="Script" uid="uid://bissnwih1xh17" path="res://scripts/plataforma.gd" id="1_cus1n"]
-[ext_resource type="Texture2D" uid="uid://blrooasx7ts43" path="res://sprites/chao_debug.png" id="2_mdt4f"]
+[ext_resource type="Script" uid="uid://bissnwih1xh17" path="res://scripts/assets das fases/plataforma.gd" id="1_cus1n"]
+[ext_resource type="Texture2D" uid="uid://blrooasx7ts43" path="res://sprites/sprites fases/DEBUG/chao_debug.png" id="2_mdt4f"]
 
 [sub_resource type="Animation" id="Animation_1v4vm"]
 length = 0.001
