@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://jnhb2drpx1ds"]
 
 [ext_resource type="Script" uid="uid://bissnwih1xh17" path="res://scripts/assets das fases/plataforma.gd" id="1_hyvyb"]
-[ext_resource type="Texture2D" uid="uid://blrooasx7ts43" path="res://sprites/sprites fases/DEBUG/chao_debug.png" id="2_hyvyb"]
+[ext_resource type="Texture2D" uid="uid://ci3qcbxl25l0a" path="res://sprites/plataformas/plataforma.png" id="2_hyvyb"]
 
 [sub_resource type="Animation" id="Animation_1v4vm"]
 length = 0.001
@@ -78,7 +78,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1v4vm"]
-size = Vector2(63, 16.5)
+size = Vector2(87.5, 23.25)
 
 [node name="left-right" type="Node2D"]
 script = ExtResource("1_hyvyb")
@@ -94,10 +94,10 @@ autoplay = "left-right"
 constant_linear_velocity = Vector2(0, 94.44)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(0, -1)
+position = Vector2(-12.25, -4.375)
 shape = SubResource("RectangleShape2D_1v4vm")
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D/CollisionShape2D"]
+texture_filter = 1
 position = Vector2(-0.499999, -4.76837e-07)
-scale = Vector2(2.1, 0.533333)
 texture = ExtResource("2_hyvyb")

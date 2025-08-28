@@ -1,13 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://be4mnx8xu5vl3"]
+[gd_scene load_steps=8 format=3 uid="uid://be4mnx8xu5vl3"]
 
 [ext_resource type="Script" uid="uid://1422ouqlqyhm" path="res://scripts/assets das fases/plataforma_farinha.gd" id="1_a34al"]
-[ext_resource type="Texture2D" uid="uid://blrooasx7ts43" path="res://sprites/sprites fases/DEBUG/chao_debug.png" id="1_dsacg"]
+[ext_resource type="Texture2D" uid="uid://tq55k2t0fqln" path="res://sprites/plataformas/plataforma-farinha 1.png" id="2_w2vgy"]
+[ext_resource type="Texture2D" uid="uid://b6jctfbprv724" path="res://sprites/plataformas/plataforma-farinha 2.png" id="3_qwhgh"]
+[ext_resource type="Texture2D" uid="uid://xkoqjx86wjjt" path="res://sprites/plataformas/plataforma-farinha 3.png" id="4_xuui3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dsacg"]
-size = Vector2(50, 16)
+size = Vector2(90, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ic4dk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_w2vgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qwhgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xuui3")
+}],
+"loop": false,
+"name": &"break",
+"speed": 3.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jdlhw"]
-size = Vector2(50, 11)
+size = Vector2(90, 18)
 
 [node name="plataforma-farinha" type="Node2D"]
 script = ExtResource("1_a34al")
@@ -15,18 +34,21 @@ script = ExtResource("1_a34al")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -2)
+position = Vector2(0, -8.5)
 shape = SubResource("RectangleShape2D_dsacg")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+texture_filter = 1
 position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_jdlhw")
+sprite_frames = SubResource("SpriteFrames_ic4dk")
+animation = &"break"
+autoplay = "break"
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-scale = Vector2(1.667, 0.4)
-texture = ExtResource("1_dsacg")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_jdlhw")
 
 [node name="Timer" type="Timer" parent="."]
 

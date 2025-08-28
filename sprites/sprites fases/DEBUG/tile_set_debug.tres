@@ -1,8 +1,9 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://v7rr4wjv58sk"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://v7rr4wjv58sk"]
 
 [ext_resource type="Texture2D" uid="uid://blrooasx7ts43" path="res://sprites/sprites fases/DEBUG/chao_debug.png" id="1_k1dp3"]
 [ext_resource type="Texture2D" uid="uid://1we7hcyrrrdu" path="res://sprites/sprites fases/DEBUG/chao_debug_wedge.png" id="2_qxdps"]
 [ext_resource type="Texture2D" uid="uid://dwimtdn52or27" path="res://sprites/sprites fases/DEBUG/debug_wedge_contrario.png" id="3_xcd63"]
+[ext_resource type="Texture2D" uid="uid://dmwjlav0iw47m" path="res://sprites/sprites fases/tutorial/tileset.png" id="4_718ki"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pvco7"]
 texture = ExtResource("1_k1dp3")
@@ -22,9 +23,38 @@ texture_region_size = Vector2i(30, 30)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -15, 15, 15, -15, 15)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_01dsg"]
+texture = ExtResource("4_718ki")
+texture_region_size = Vector2i(30, 30)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+5:0/0 = 0
+5:1/0 = 0
+4:2/0 = 0
+4:3/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+
 [resource]
 tile_size = Vector2i(30, 30)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_pvco7")
 sources/1 = SubResource("TileSetAtlasSource_5yog3")
 sources/2 = SubResource("TileSetAtlasSource_bqbxk")
+sources/3 = SubResource("TileSetAtlasSource_01dsg")
