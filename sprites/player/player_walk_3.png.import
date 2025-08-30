@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o6kqapau1e7m"
-path="res://.godot/imported/rollers.png-9300ef4060e119a8ca15f2acd176184d.ctex"
+uid="uid://bhs8wpx30njch"
+path="res://.godot/imported/player_walk_3.png-1041c4c481cadc01fa100e63d50cd081.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/rollers.png"
-dest_files=["res://.godot/imported/rollers.png-9300ef4060e119a8ca15f2acd176184d.ctex"]
+source_file="res://sprites/player/player_walk_3.png"
+dest_files=["res://.godot/imported/player_walk_3.png-1041c4c481cadc01fa100e63d50cd081.ctex"]
 
 [params]
 

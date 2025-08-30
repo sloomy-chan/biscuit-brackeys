@@ -23,6 +23,28 @@ animations = [{
 "loop": false,
 "name": &"break",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_w2vgy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xuui3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qwhgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_w2vgy")
+}],
+"loop": false,
+"name": &"remake",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jdlhw"]
@@ -43,8 +65,7 @@ shape = SubResource("RectangleShape2D_dsacg")
 texture_filter = 1
 position = Vector2(0, -0.5)
 sprite_frames = SubResource("SpriteFrames_ic4dk")
-animation = &"break"
-autoplay = "break"
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, -4)
@@ -53,6 +74,7 @@ shape = SubResource("RectangleShape2D_jdlhw")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="cooldown" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

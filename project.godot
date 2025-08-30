@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="risk it for the biscuit"
-run/main_scene="uid://dixyojc4r5beq"
+run/main_scene="uid://dx80nda834ecw"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [display]
 
 window/size/viewport_width=79
 window/size/viewport_height=48
+window/size/mode=4
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
@@ -26,6 +27,7 @@ window/stretch/scale_mode="integer"
 
 player=""
 plataforma-some=""
+end=""
 
 [input]
 
@@ -66,3 +68,7 @@ sprint={
 [physics]
 
 2d/default_gravity=265.379
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

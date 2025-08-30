@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://n4csn4lfnbqg"]
+[gd_scene load_steps=11 format=3 uid="uid://n4csn4lfnbqg"]
 
 [ext_resource type="Script" uid="uid://c4hvy2aslwsgf" path="res://scripts/assets das fases/ghost.gd" id="1_0liil"]
 [ext_resource type="Texture2D" uid="uid://wxk4u10rfei8" path="res://sprites/ghost/ghost2.png" id="2_sippa"]
 [ext_resource type="Texture2D" uid="uid://cgwj8wde6q6wl" path="res://sprites/ghost/ghost_hands.png" id="2_vpnqr"]
 [ext_resource type="Texture2D" uid="uid://r0y3l4s4s43x" path="res://sprites/ghost/ghost.png" id="3_vpnqr"]
+[ext_resource type="AudioStream" uid="uid://cgeas60vs2qdm" path="res://áudio/ghost_sfx.wav" id="5_ogft1"]
 
 [sub_resource type="Animation" id="Animation_72yiy"]
 length = 0.001
@@ -118,5 +119,10 @@ texture_filter = 1
 position = Vector2(3, 10)
 sprite_frames = SubResource("SpriteFrames_2lice")
 frame_progress = 0.609116
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ogft1")
+autoplay = true
+max_distance = 1346.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

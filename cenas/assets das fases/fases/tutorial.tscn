@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://dixyojc4r5beq"]
+[gd_scene load_steps=15 format=4 uid="uid://dixyojc4r5beq"]
 
+[ext_resource type="Texture2D" uid="uid://c6xhpti7dw7wo" path="res://sprites/sprites fases/tutorial/background.png" id="1_k66fh"]
 [ext_resource type="TileSet" uid="uid://mdee5fj3g8p" path="res://sprites/sprites fases/tutorial/tutorial.tres" id="4_bfh2o"]
 [ext_resource type="PackedScene" uid="uid://cyysr72yn5jf6" path="res://cenas/player.tscn" id="4_d8m4j"]
 [ext_resource type="PackedScene" uid="uid://dbxqfof1n5n6t" path="res://cenas/plataformas/down-up.tscn" id="5_n8pbk"]
@@ -7,11 +8,35 @@
 [ext_resource type="PackedScene" uid="uid://israjmx1rxfx" path="res://cenas/assets das fases/killbox.tscn" id="7_jafb8"]
 [ext_resource type="PackedScene" uid="uid://crp2l7ecaqxuq" path="res://cenas/assets das fases/level_end.tscn" id="7_k66fh"]
 [ext_resource type="PackedScene" uid="uid://dpqgi0j5yx07g" path="res://cenas/assets das fases/fases/level 1.tscn" id="8_bfh2o"]
+[ext_resource type="AudioStream" uid="uid://dwmtikxwj3xkj" path="res://áudio/musica/tutorial_jazz.mp3" id="9_bfh2o"]
+[ext_resource type="PackedScene" uid="uid://5ggxujeq4mcq" path="res://cenas/item.tscn" id="10_bbed8"]
+[ext_resource type="Texture2D" uid="uid://bl3o1yrfovbd3" path="res://sprites/decorações/bed.png" id="11_7875h"]
+[ext_resource type="Texture2D" uid="uid://1ctuxo3j3qhc" path="res://sprites/decorações/armario.png" id="12_4ogl2"]
+[ext_resource type="FontFile" uid="uid://brqkcapfecg2d" path="res://cenas/assets das fases/Daydream DEMO.otf" id="13_w5chs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k66fh"]
-size = Vector2(1573, 210)
+size = Vector2(1439, 193)
 
 [node name="tutorial" type="Node2D"]
+
+[node name="level end" parent="." instance=ExtResource("7_k66fh")]
+z_index = -1
+position = Vector2(2010, 119)
+proxima_cena = ExtResource("8_bfh2o")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+modulate = Color(0.631373, 0.639216, 0.67451, 1)
+z_index = -4
+texture_filter = 1
+scroll_scale = Vector2(5.42, 5.42)
+scroll_offset = Vector2(17.79, 20.175)
+repeat_size = Vector2(45, 49)
+autoscroll = Vector2(5, 5)
+repeat_times = 256
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("1_k66fh")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -20,9 +45,9 @@ tile_map_data = PackedByteArray("AAD//wEABQACAAMAAAAAAAEABQACAAMAAAABAAEABQACAAM
 tile_set = ExtResource("4_bfh2o")
 
 [node name="player" parent="." instance=ExtResource("4_d8m4j")]
-position = Vector2(16, -11)
+position = Vector2(70, -46)
 floor_constant_speed = false
-floor_max_angle = 1.26187
+floor_max_angle = 1.309
 
 [node name="down-up" parent="." instance=ExtResource("5_n8pbk")]
 position = Vector2(1038, -42)
@@ -30,13 +55,88 @@ position = Vector2(1038, -42)
 [node name="up-down" parent="." instance=ExtResource("6_hrflu")]
 position = Vector2(1254, -96)
 
-[node name="level end" parent="." instance=ExtResource("7_k66fh")]
-position = Vector2(1741, 75)
-proxima_cena = ExtResource("8_bfh2o")
-
 [node name="Area2D" parent="." instance=ExtResource("7_jafb8")]
 position = Vector2(476, 301)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(481.5, -95)
+position = Vector2(414.5, -86.5)
 shape = SubResource("RectangleShape2D_k66fh")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_bfh2o")
+volume_db = -10.307
+autoplay = true
+
+[node name="Sprite2D" parent="." instance=ExtResource("10_bbed8")]
+position = Vector2(1847, 68)
+
+[node name="Bed" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(-37, 31)
+texture = ExtResource("11_7875h")
+
+[node name="Armario" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(37, 20.1)
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("12_4ogl2")
+
+[node name="text2" type="RichTextLabel" parent="."]
+offset_left = 64.0
+offset_top = -35.0
+offset_right = 236.0
+offset_bottom = 32.0
+theme_override_fonts/normal_font = ExtResource("13_w5chs")
+theme_override_font_sizes/normal_font_size = 13
+text = "walk:
+A, D"
+
+[node name="text1" type="RichTextLabel" parent="."]
+texture_filter = 1
+offset_left = -72.0
+offset_top = -92.0
+offset_right = 153.0
+offset_bottom = -33.0
+theme_override_fonts/normal_font = ExtResource("13_w5chs")
+theme_override_font_sizes/normal_font_size = 13
+text = "Tutorial level:
+Your House"
+
+[node name="text3" type="RichTextLabel" parent="."]
+offset_left = 272.0
+offset_top = -113.0
+offset_right = 444.0
+offset_bottom = -46.0
+theme_override_fonts/normal_font = ExtResource("13_w5chs")
+theme_override_font_sizes/normal_font_size = 13
+text = "Jump:
+W, Spacebar"
+
+[node name="text4" type="RichTextLabel" parent="."]
+offset_left = 556.0
+offset_top = -117.0
+offset_right = 685.0
+offset_bottom = -50.0
+theme_override_fonts/normal_font = ExtResource("13_w5chs")
+theme_override_font_sizes/normal_font_size = 10
+text = "hold the jump button to go higher!"
+
+[node name="text5" type="RichTextLabel" parent="."]
+offset_left = 1363.0
+offset_top = -191.0
+offset_right = 1492.0
+offset_bottom = -124.0
+theme_override_fonts/normal_font = ExtResource("13_w5chs")
+theme_override_font_sizes/normal_font_size = 10
+text = "Press shift to toggle sprint!"
+
+[node name="text6" type="RichTextLabel" parent="."]
+offset_left = 1723.0
+offset_top = -5.0
+offset_right = 2011.0
+offset_bottom = 34.0
+theme_override_fonts/normal_font = ExtResource("13_w5chs")
+theme_override_font_sizes/normal_font_size = 10
+text = "Collect the ingredient on every level to unlock the door!"

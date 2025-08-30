@@ -36,16 +36,20 @@ use_texture_padding = false
 2:3/0 = 0
 2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -3.04577, 15, -3.04681, 15, 15, -15, 15)
 5:3/0 = 0
-5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.78526, -15, -4.90847, 15, 15, 15, 15, -15)
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.90847, 15, 15, 15, 15, -15, -15, -15, -15, 0.31863, -8.92166, 0.63726, -4.46083, 7.64714)
 5:2/0 = 0
-5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(15, -3.08578, -5.92885, -3.08578, -7.87047, -1.00548, -8.14784, 1.8376, -4.80728, 3.81267, -4.95805, 15, 15, 15)
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(15, -15, -4.99237, -15, -4.48894, -5.20214, -0.964912, -1.42639, 3.39817, 0.755148, 8.60303, 0.63726, 15, 0.63726)
 5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.46083, -15, -4.1422, 15, 15, 15, 15, -15)
 5:0/0 = 0
 5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(15, -3.31684, -5.58949, -3.19399, -8.16925, -0.982767, -8.2921, 1.47415, -5.58949, 3.93107, -5.0981, 15, 15, 15)
 4:0/0 = 0
 4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.46083, 15, 5.09809, 3.50494, 8.92166, 0.955891, 15, 0.31863, 15, -15, -15, -15, -15, 15)
 4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, 0.637259, -2.54905, 0.31863, 3.82357, -7.00988, 3.82357, -15, -15, -15)
 4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, 0, 15, 0.31863, 15, -15, -15, -15)
 
 [resource]
 tile_size = Vector2i(30, 30)

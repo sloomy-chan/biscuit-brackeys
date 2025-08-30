@@ -10,6 +10,7 @@ func _process(delta: float) -> void:
 		anim.pause()
 	else:
 		anim.play("break")
+		
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -29,3 +30,4 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func _on_cooldown_timeout() -> void:
 	self.visible = true
 	colisao.disabled = false
+	anim.play("default")

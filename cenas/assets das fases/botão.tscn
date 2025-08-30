@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4ev35f81ql7i"]
+[gd_scene load_steps=8 format=3 uid="uid://b4ev35f81ql7i"]
 
 [ext_resource type="Script" uid="uid://ypdff223s8ff" path="res://scripts/assets das fases/botao_interagir.gd" id="1_utga2"]
 [ext_resource type="Texture2D" uid="uid://baa6k71ygpcn7" path="res://scripts/assets das fases/botao_off.png" id="2_l73xq"]
 [ext_resource type="Texture2D" uid="uid://dads584ylb87j" path="res://scripts/assets das fases/botao_on.png" id="3_irni7"]
+[ext_resource type="AudioStream" uid="uid://dk5ulfstd078w" path="res://áudio/blipSelect.wav" id="4_3w77t"]
+[ext_resource type="AudioStream" uid="uid://c6dtp4q16lf3c" path="res://áudio/clock-ticking-down-376897.mp3" id="5_2lev6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l73xq"]
 animations = [{
@@ -46,6 +48,13 @@ autoplay = "off"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_qssd0")
+
+[node name="active" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_3w77t")
+
+[node name="tick tock" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_2lev6")
+pitch_scale = 1.11
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

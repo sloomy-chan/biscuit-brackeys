@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://5ggxujeq4mcq"]
+
+[ext_resource type="Texture2D" uid="uid://dc75mta1j4e8x" path="res://sprites/itens/chave.png" id="1_tnite"]
+[ext_resource type="Script" uid="uid://bvwugqtboaatt" path="res://scripts/itens.gd" id="2_ttk8k"]
+[ext_resource type="AudioStream" uid="uid://c3g48n3xiq4rf" path="res://áudio/pickup_item.wav" id="3_106ap"]
+[ext_resource type="Texture2D" uid="uid://npvdd8evwys4" path="res://sprites/sprites fases/glow.png" id="4_rvigx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpy52"]
+
+[sub_resource type="Animation" id="Animation_rvigx"]
+resource_name = "glow"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("glow:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.96667),
+"transitions": PackedFloat32Array(1, 93.7015),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_alhwc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("glow:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2cehf"]
+_data = {
+&"RESET": SubResource("Animation_alhwc"),
+&"glow": SubResource("Animation_rvigx")
+}
+
+[node name="item" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_tnite")
+script = ExtResource("2_ttk8k")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vpy52")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_106ap")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2cehf")
+}
+autoplay = "glow"
+
+[node name="glow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.619608)
+z_index = -1
+z_as_relative = false
+texture = ExtResource("4_rvigx")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

@@ -1,0 +1,110 @@
+[gd_scene load_steps=13 format=3 uid="uid://dx80nda834ecw"]
+
+[ext_resource type="AudioStream" uid="uid://bwdeepnx8jm7g" path="res://áudio/musica/menu_music.mp3" id="1_6yjg5"]
+[ext_resource type="Script" uid="uid://dvt72wnm58skl" path="res://cenas/assets das fases/fases/main_menu.gd" id="1_bcaqt"]
+[ext_resource type="Texture2D" uid="uid://dimt8osrkjeob" path="res://sprites/logo.png" id="2_bcaqt"]
+[ext_resource type="Texture2D" uid="uid://c6xhpti7dw7wo" path="res://sprites/sprites fases/tutorial/background.png" id="4_5t5t0"]
+[ext_resource type="Texture2D" uid="uid://qkobxmy7vfqj" path="res://sprites/menu/2.png" id="5_etbwb"]
+[ext_resource type="Texture2D" uid="uid://b06g14b1h07nm" path="res://sprites/menu/5.png" id="6_xntrf"]
+[ext_resource type="Texture2D" uid="uid://b46x6ec4ixk7m" path="res://sprites/menu/windows.png" id="7_lvt12"]
+[ext_resource type="Texture2D" uid="uid://cpo3ikfjilpl6" path="res://sprites/menu/3.png" id="7_ywdn3"]
+[ext_resource type="FontFile" uid="uid://brqkcapfecg2d" path="res://cenas/assets das fases/Daydream DEMO.otf" id="8_5s7lm"]
+[ext_resource type="Texture2D" uid="uid://vbgho1ldcb3s" path="res://sprites/menu/6.png" id="8_qkdxe"]
+[ext_resource type="Texture2D" uid="uid://bwbgxqfj5le5" path="res://sprites/menu/4.png" id="9_lylj0"]
+[ext_resource type="Texture2D" uid="uid://ce74d3a8qdnix" path="res://sprites/menu/7.png" id="10_lvt12"]
+
+[node name="main menu" type="Node2D"]
+script = ExtResource("1_bcaqt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_6yjg5")
+volume_db = -8.5
+autoplay = true
+
+[node name="Logo" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(257, 60)
+texture = ExtResource("2_bcaqt")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(165, 100)
+zoom = Vector2(0.24, 0.24)
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+modulate = Color(0.631373, 0.639216, 0.67451, 1)
+z_index = -4
+texture_filter = 1
+scroll_scale = Vector2(5.42, 5.42)
+scroll_offset = Vector2(17.79, 20.175)
+repeat_size = Vector2(45, 49)
+autoscroll = Vector2(11.9, 14.85)
+repeat_times = 256
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("4_5t5t0")
+
+[node name="play" type="TextureButton" parent="."]
+offset_left = 1.0
+offset_top = 32.0
+offset_right = 75.0
+offset_bottom = 106.0
+texture_normal = ExtResource("5_etbwb")
+texture_hover = ExtResource("6_xntrf")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = 85.0
+offset_top = 16.0
+offset_right = 277.0
+offset_bottom = 179.0
+texture = ExtResource("7_lvt12")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 185.0
+offset_bottom = 157.0
+theme_override_fonts/normal_font = ExtResource("8_5s7lm")
+theme_override_font_sizes/normal_font_size = 4
+text = "Game made by myself in the span of a week for the second Brackeys 2025 Jam. All assets were made by me, with the exception of the audio, and some of the menu art, with the latter being made by my cousin, Fillipe.
+
+Music Credits:
+Onoichenko Music
+Ievgen Poltavskyi
+Tunetank
+Maksym Malko
+
+All sound effects were made on sfxr.me, with the exception of one made by DRAGON-STUDIO
+
+All of these artists can be found on Pixabay.com"
+
+[node name="about" type="TextureButton" parent="."]
+offset_left = 1.0
+offset_top = 72.0
+offset_right = 75.0
+offset_bottom = 146.0
+size_flags_stretch_ratio = 5.25
+texture_normal = ExtResource("7_ywdn3")
+texture_hover = ExtResource("8_qkdxe")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="quit" type="TextureButton" parent="."]
+offset_left = -253.0
+offset_top = 427.0
+offset_right = -179.0
+offset_bottom = 501.0
+texture_normal = ExtResource("9_lylj0")
+texture_hover = ExtResource("10_lvt12")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="about" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
